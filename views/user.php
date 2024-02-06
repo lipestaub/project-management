@@ -6,6 +6,8 @@
     <title>Name</title>
 </head>
 <body>
+    <?php include_once '../public/html/menu.html'; ?>
+    
     <h1>Name 'E-mail'</h1>
     <h2>User's Task List</h1>
     <table>

@@ -8,6 +8,8 @@
     <script type="application/javascript" src="../public/javascript/script.js"></script>
 </head>
 <body>
+    <?php include_once '../public/html/menu.html'; ?>
+    
     <h1>Register Project</h1>
     <form action="/register-project" method="post">
         <label for="name">Name</label>

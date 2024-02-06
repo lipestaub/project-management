@@ -6,6 +6,8 @@
     <title>Task</title>
 </head>
 <body>
+    <?php include_once '../public/html/menu.html'; ?>
+    
     <h1>Task Description</h1>
     <p>Start Date: 05/02/2024</p>
     <br>

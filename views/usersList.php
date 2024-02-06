@@ -6,6 +6,8 @@
     <title>Users List</title>
 </head>
 <body>
+    <?php include_once '../public/html/menu.html'; ?>
+    
     <h1>Users List</h1>
     <table>
         <tr>

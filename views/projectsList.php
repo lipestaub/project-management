@@ -6,6 +6,8 @@
     <title>Projects List</title>
 </head>
 <body>
+    <?php include_once '../public/html/menu.html'; ?>
+
     <h1>Projects List</h1>
     <table>
         <tr>

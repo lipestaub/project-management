@@ -6,6 +6,8 @@
     <title>Project</title>
 </head>
 <body>
+    <?php include_once '../public/html/menu.html'; ?>
+    
     <h1>Project Name</h1>
     <p>Description: Description</p>
     <br>

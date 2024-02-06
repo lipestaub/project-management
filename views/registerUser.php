@@ -8,6 +8,8 @@
     <script type="application/javascript" src="../public/javascript/script.js"></script>
 </head>
 <body>
+    <?php include_once '../public/html/menu.html'; ?>
+    
     <h1>Register User</h1>
     <form action="/register-user" method="post">
         <label for="name">Name</label>
