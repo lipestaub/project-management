@@ -16,7 +16,11 @@
             <th></th>
         </tr>
         <tr>
-            
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><a href="/task/id" target="_blank">Open</a></td>
         </tr>
     </table>
 </body>

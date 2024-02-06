@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects List</title>
+    <title>Name</title>
 </head>
 <body>
-    <h1>Projects List</h1>
+    <h1>Name 'E-mail'</h1>
+    <h2>User's Task List</h1>
     <table>
         <tr>
-            <th>Name</th>
             <th>Description</th>
+            <th>Projeto</th>
             <th>Start Date</th>
             <th>End Date</th>
             <th></th>
@@ -20,7 +21,7 @@
             <td></td>
             <td></td>
             <td></td>
-            <td><a href="/project/id" target="_blank">Open</a></td>
+            <td><a href="/task/id" target="_blank">Open</a></td>
         </tr>
     </table>
 </body>
