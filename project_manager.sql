@@ -31,7 +31,7 @@ CREATE TABLE public.assignment(
     id serial4 NOT NULL,
     user_id int4 NOT NULL,
     task_id int4 NOT NULL,
-    date DATE NULL,
+    date TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP AT TIME ZONE 'UTC' - INTERVAL '3 hours',
     CONSTRAINT assignment_pkey PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES "user"(id),
     FOREIGN KEY (task_id) REFERENCES task(id)
