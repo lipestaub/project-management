@@ -22,7 +22,11 @@
             <td></td>
             <td></td>
             <td></td>
-            <td><a href="/task/id">Open</a></td>
+            <td>
+                <form action="/task" method="get">
+                    <input type="hidden" name="task_id" id="task_id" value="echo">
+                </form>
+            </td>
         </tr>
     </table>
 </body>

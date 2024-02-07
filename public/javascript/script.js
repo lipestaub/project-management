@@ -82,3 +82,7 @@ function validateRegisterUserFields(event) {
     
     return true;
 }
+
+function validateAssignUserToTaskFields(event) {
+    
+}

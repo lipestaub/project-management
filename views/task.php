@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task</title>
+
+    <script type="application/javascript" src="../public/javascript/script.js"></script>
 </head>
 <body>
     <?php include_once '../public/html/menu.html'; ?>
@@ -23,8 +25,25 @@
         <tr>
             <td></td>
             <td></td>
-            <td><a href="/user/id">Open</a></td>
+            <td>
+                <form action="/user" method="get">
+                    <input type="hidden" name="user_id" id="user_id" value="echo">
+                </form>
+            </td>
         </tr>
     </table>
+    <hr>
+    <h2>Assign User to Task</h1>
+    <form action="/assign-user-to-task" method="post" onsubmit="validateAssignUserToTaskFields(event);">
+        <label for="user_id">User</label>
+        <br>
+        <select name="user_id" id="user_id">
+            <option value="0">Select</option>
+            <option value="echo">echo</option>
+        </select>
+        <br>
+        <br>
+        <input type="submit" value="Assign">
+    </form>
 </body>
 </html>

@@ -18,7 +18,11 @@
         <tr>
             <td></td>
             <td></td>
-            <td><a href="/user/id">Open</a></td>
+            <td>
+                <form action="/user" method="get">
+                    <input type="hidden" name="user_id" id="user_id" value="echo">
+                </form>
+            </td>
         </tr>
     </table>
 </body>
