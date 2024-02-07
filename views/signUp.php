@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>Sign Up</h1>
-    <form action="/sign-up" method="post">
+    <form action="/sign-up" method="post" onsubmit="validateSignUpFields(event);">
         <label for="username">Username</label>
         <br>
         <input type="text" name="username" id="username">
@@ -25,7 +25,7 @@
         <input type="password" name="confirm_password" id="confirm_password">
         <br>
         <br>
-        <input type="submit" value="Sign Up" onclick="validateSignUpFields();">
+        <input type="submit" value="Sign Up">
     </form>
     <br>
 </body>

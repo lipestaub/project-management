@@ -22,7 +22,7 @@
             <td></td>
             <td></td>
             <td></td>
-            <td><a href="/task/id" target="_blank">Open</a></td>
+            <td><a href="/task/id">Open</a></td>
         </tr>
     </table>
 </body>

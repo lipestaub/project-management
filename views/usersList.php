@@ -18,7 +18,7 @@
         <tr>
             <td></td>
             <td></td>
-            <td><a href="/user/id" target="_blank">Open</a></td>
+            <td><a href="/user/id">Open</a></td>
         </tr>
     </table>
 </body>

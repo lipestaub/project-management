@@ -11,7 +11,7 @@
     <?php include_once '../public/html/menu.html'; ?>
     
     <h1>Register User</h1>
-    <form action="/register-user" method="post">
+    <form action="/register-user" method="post" onsubmit="validateRegisterUserFields(event);">
         <label for="name">Name</label>
         <br>
         <input type="text" name="name" id="name">
@@ -32,7 +32,7 @@
         <input type="password" name="confirm_password" id="confirm_password">
         <br>
         <br>
-        <input type="submit" value="Register User" onclick="validateRegisterUserFields();">
+        <input type="submit" value="Register User">
     </form>
     <br>
 </body>

@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>Sign In</h1>
-    <form action="/sign-in" method="post">
+    <form action="/sign-in" method="post" onsubmit="validateSignInFields(event);">
         <label for="email">E-mail</label>
         <br>
         <input type="text" name="email" id="email">
@@ -20,9 +20,9 @@
         <input type="password" name="password" id="password">
         <br>
         <br>
-        <input type="submit" value="Sign In" onclick="validateSignInFields();">
+        <input type="submit" value="Sign In">
     </form>
     <br>
-    <a href="/sign-up" target="_blank">Sign Up</a>
+    <a href="/sign-up">Sign Up</a>
 </body>
 </html>

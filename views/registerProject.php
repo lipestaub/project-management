@@ -11,7 +11,7 @@
     <?php include_once '../public/html/menu.html'; ?>
     
     <h1>Register Project</h1>
-    <form action="/register-project" method="post">
+    <form action="/register-project" method="post" onsubmit="validateRegisterProjectFields(event);">
         <label for="name">Name</label>
         <br>
         <input type="text" name="name" id="name">
@@ -32,7 +32,7 @@
         <input type="date" name="end_date" id="end_date">
         <br>
         <br>
-        <input type="submit" value="Register Project" onclick="validateRegisterProjectFields();">
+        <input type="submit" value="Register Project">
     </form>
     <br>
 </body>

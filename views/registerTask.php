@@ -11,7 +11,7 @@
     <?php include_once '../public/html/menu.html'; ?>
     
     <h1>Register Task</h1>
-    <form action="/register-task" method="post">
+    <form action="/register-task" method="post" onsubmit="validateRegisterTaskFields(event);">
         <label for="description">Description</label>
         <br>
         <textarea name="description" id="" cols="30" rows="10" maxlength="255"></textarea>
@@ -34,7 +34,7 @@
         <input type="date" name="end_date" id="end_date">
         <br>
         <br>
-        <input type="submit" value="Register Task" onclick="validateRegisterTaskFields();">
+        <input type="submit" value="Register Task">
     </form>
     <br>
 </body>
