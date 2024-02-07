@@ -41,5 +41,11 @@
         {
             return $this->endDate;
         }
+
+        public function createTask(Task $task)
+        {
+            $taskDAO = new TaskDAO();
+            $task = $taskDAO->createTask($task);
+        }
     }
 ?>

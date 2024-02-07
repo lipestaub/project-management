@@ -1,6 +1,6 @@
 <?php
 
-    class projectId
+    class Project
     {
         private ?int $id;
         private ?string $name;
@@ -40,6 +40,12 @@
         public function getEndDate()
         {
             return $this->endDate;
+        }
+
+        public function createProject(Project $project)
+        {
+            $projectDAO = new ProjectDAO();
+            $project = $projectDAO->createProject($project);
         }
     }
 ?>
