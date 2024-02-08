@@ -58,7 +58,7 @@
                     $project['id'],
                     $project['name'],
                     $project['description'],
-                    $project['star_date'],
+                    $project['start_date'],
                     $project['end_date'],
                 );
             }, $projects);
@@ -72,7 +72,7 @@
                 $project['id'],
                 $project['name'],
                 $project['description'],
-                $project['star_date'],
+                $project['start_date'],
                 $project['end_date'],
             );
         }

@@ -17,17 +17,24 @@
             <th>End Date</th>
             <th></th>
         </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>
-                <form action="/project" method="get">
-                    <input type="hidden" name="project_id" id="project_id" value="echo">
-                </form>
-            </td>
-        </tr>
+        <?php
+            foreach ($projects as $project) {
+        ?>
+                <tr>
+                    <td><?php echo $project->getName(); ?></td>
+                    <td><?php echo $project->getDescription(); ?></td>
+                    <td><?php echo $project->getStartDate(); ?></td>
+                    <td><?php echo $project->getEndDate(); ?></td>
+                    <td>
+                        <form action="/project" method="get">
+                            <input type="hidden" name="project_id" id="project_id" value=<?php echo $project->getId(); ?>>
+                            <input type="submit" value="Open">
+                        </form>
+                    </td>
+                </tr>
+        <?php 
+            }
+        ?>
     </table>
 </body>
 </html>
