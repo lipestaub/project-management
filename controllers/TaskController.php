@@ -27,7 +27,7 @@
             $taskModel = new Task();
             $tasks = $taskModel->getTasks();
 
-            require_once __DIR__ . '/../tasksList.php';
+            require_once __DIR__ . '/../views/tasksList.php';
         }
 
         public function registerTaskPage()
