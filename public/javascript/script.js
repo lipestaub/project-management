@@ -84,5 +84,13 @@ function validateRegisterUserFields(event) {
 }
 
 function validateAssignUserToTaskFields(event) {
-    
+    const userId = parseInt(document.getElementById('user_id').value);
+
+    if (userId === 0) {
+        alert("Please select an user.");
+        event.preventDefault();
+        return false;
+    }
+
+    return true;
 }
