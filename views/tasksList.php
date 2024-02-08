@@ -14,23 +14,27 @@
     <table>
         <tr>
             <th>Description</th>
-            <th>Projeto</th>
             <th>Start Date</th>
             <th>End Date</th>
             <th></th>
         </tr>
+        <?php
+            foreach ($tasks as $task) {
+        ?>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><?php echo $task->getDescription(); ?></td>
+            <td><?php echo $task->getStartDate(); ?></td>
+            <td><?php echo $task->getEndDate(); ?></td>
             <td>
                 <form action="/task" method="get">
-                    <input type="hidden" name="task_id" id="task_id" value="echo">
+                    <input type="hidden" name="task_id" id="task_id" value="<?php echo $task->getId(); ?>">
                     <input type="submit" value="Open">
                 </form>
             </td>
         </tr>
+        <?php 
+            }
+        ?>
     </table>
 </body>
 </html>
