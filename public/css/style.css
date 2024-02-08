@@ -1,16 +1,15 @@
-/* Estilos gerais */
+
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
 }
 
-/* Estilos para o menu */
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    background-color: #2833d4; /* cor de fundo */
+    background-color: #2833d4; 
     overflow: hidden;
 }
 
@@ -28,7 +27,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #2597cc; /* Cor de fundo ao passar o mouse */
+    background-color: #2597cc;
 }
 
 h1, h2, h3 {
