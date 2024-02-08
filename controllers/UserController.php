@@ -99,6 +99,7 @@
                 exit();
             }
 
+            require_once __DIR__ . '/../views/registerUser.php';
         }
 
         public function userTasksPage()
@@ -160,7 +161,7 @@
             if ($user->getId() === null) {
                 $userModel->createUser(new User(null, $name, $email, $password));
 
-                header('Location: /users-list');
+                header('Location: /users');
             }
             else {
                 header('Location: /register-user');

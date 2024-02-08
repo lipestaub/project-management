@@ -16,7 +16,7 @@
             $stmt->bindValue(":description", $task->getDescription());
             $stmt->bindValue(":project_id", $task->getProjectId());
             $stmt->bindValue(":start_date", $task->getStartDate());
-            $stmt->bindValue(":start_date", $task->getEndDate());
+            $stmt->bindValue(":end_date", $task->getEndDate());
             $stmt->execute();
         }
 

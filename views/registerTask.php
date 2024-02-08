@@ -21,6 +21,13 @@
         <br>
         <select name="project_id" id="project_id">
             <option value="0">Select</option>
+            <?php
+                foreach ($projects as $project) {
+            ?>
+                    <option value="<?php echo $project->getId(); ?>"><?php echo $project->getName(); ?></option>
+            <?php
+                }
+            ?>
         </select>
         <br>
         <br>

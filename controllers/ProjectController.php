@@ -41,11 +41,22 @@
                 exit();
             }
 
+            require_once __DIR__ . '/../views/registerProject.php';
         }
 
         public function createProject()
         {
-            
+            $name = $_POST['name'];
+            $description = $_POST['description'];
+            $startDate = $_POST['start_date'];
+            $endDate = $_POST['end_date'];
+
+            $projectModel = new Project();
+
+            $projectModel->createProject(new Project(null, $name, $description, $startDate, $endDate));
+
+            header('Location: /projects');
+            exit();
         }
     }
 ?>
