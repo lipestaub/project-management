@@ -85,7 +85,7 @@
             $users = $userDAO->getUsers();
 
             array_map(function($user){
-                return new User(
+                return new self(
                     $user['id'],
                     $user['username'],
                     $user['password'],

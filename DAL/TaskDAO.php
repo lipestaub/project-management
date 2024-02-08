@@ -19,12 +19,21 @@
             $stmt->execute();
         }
 
-        public function getTaskById($taskId)
+        public function getTaskById(int $taskId)
         {
             $query = 'SELECT * FROM task WHERE id = :id;';
             $stmt = $this->db->prepare($query);
             $stmt->bindValue(":id", $taskId);
             $stmt->execute();
+        }
+
+        public function getTasks()
+        {
+            $query = 'SELECT * FROM task;';
+            $stmt = $this->db->prepare($query);
+            $stmt->execute();
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            return $stmt->fetchAll();
         }
     }
 ?>

@@ -48,10 +48,36 @@
             $task = $taskDAO->createTask($task);
         }
 
-        public function getTaskById($taskId)
+        public function getTaskById(int $taskId)
         {
             $taskDAO = new TaskDAO();
-            $task = $taskDAO->getTaskById();
+            $task = $taskDAO->getTaskById($taskId);
+
+            return new self(
+                $task['id'],
+                $task['description'],
+                $task['project_id'],
+                $task['start_date'],
+                $task['end_date'],
+            );
+        }
+
+        public function getTasks()
+        {
+            $taskDAO = new TaskDAO();
+            $tasks = $taskDAO->getTasks();
+
+            array_map(function($task){
+                return new self(
+                    $task['id'],
+                    $task['description'],
+                    $task['project_id'],
+                    $task['start_date'],
+                    $task['end_date'],
+                );
+            }, $tasks);
+
+            return $tasks;
         }
     }
 ?>

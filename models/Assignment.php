@@ -41,5 +41,40 @@
             $assignment = $assignmentDAO->createAssignment($assignment);
         }
 
+        public function getAssignmentsByUserId(int $userId)
+        {
+            $assignmentDAO = new AssignmentDAO();
+            $assignments = $assignmentDAO->getAssignmentsByUserId($userId);
+
+            array_map(function($assignment){
+                return new self(
+                    $assignment['id'],
+                    $assignment['user_id'],
+                    $assignment['task_id'],
+                    $assignment['date'],
+                );
+            }, $assignments);
+
+            return $assignments;
+        }
+
+        public function getAssignmentByTasktId(int $taskId)
+        {
+            $assignmentDAO = new AssignmentDAO();
+            $assignments = $assignmentDAO->getAssignmentsByTaskId($taskId);
+
+            array_map(function($assignment){
+                return new self(
+                    $assignment['id'],
+                    $assignment['user_id'],
+                    $assignment['task_id'],
+                    $assignment['date'],
+                );
+            }, $assignments);
+
+            return $assignments;
+        }
+
+
     }
 ?>
