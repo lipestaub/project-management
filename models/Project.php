@@ -42,7 +42,7 @@
             return $this->endDate;
         }
 
-        public function createProject(Project $project)
+        public function createProject(self $project)
         {
             $projectDAO = new ProjectDAO();
             $project = $projectDAO->createProject($project);

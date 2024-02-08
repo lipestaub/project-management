@@ -20,11 +20,11 @@
             $stmt->execute();
         }
 
-        public function getUserById(int $id)
+        public function getUserById(int $userId)
         {
             $query = 'SELECT * FROM "user" WHERE id = :id;';
             $stmt = $this->db->prepare($query);
-            $stmt->bindParam(":id", $id);
+            $stmt->bindParam(":id", $userId);
             $stmt->execute();
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             return $stmt->fetchAll()[0];
@@ -49,6 +49,15 @@
             $stmt->execute();
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             return $stmt->fetchAll()[0];
+        }
+
+        public function getUsers()
+        {
+            $query = 'SELECT * from "user";';
+            $stmt = $this->db->prepare($query);
+            $stmt->execute();  
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            return $stmt->fetchAll();
         }
     }
 ?>

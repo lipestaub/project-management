@@ -42,10 +42,16 @@
             return $this->endDate;
         }
 
-        public function createTask(Task $task)
+        public function createTask(self $task)
         {
             $taskDAO = new TaskDAO();
             $task = $taskDAO->createTask($task);
+        }
+
+        public function getTaskById($taskId)
+        {
+            $taskDAO = new TaskDAO();
+            $task = $taskDAO->getTaskById();
         }
     }
 ?>
