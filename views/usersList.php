@@ -15,16 +15,22 @@
             <th>E-mail</th>
             <th></th>
         </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td>
-                <form action="/user" method="get">
-                    <input type="hidden" name="user_id" id="user_id" value="echo">
-                    <input type="submit" value="Open">
-                </form>
-            </td>
-        </tr>
+        <?php
+            foreach ($users as $user) {
+        ?>
+            <tr>
+                <td><?php echo $user->getName(); ?></td>
+                <td><?php echo $user->getEmail(); ?></td>
+                <td>
+                    <form action="/user" method="get">
+                        <input type="hidden" name="user_id" id="user_id" value="echo">
+                        <input type="submit" value="Open">
+                    </form>
+                </td>
+            </tr>
+        <?php
+            }
+        ?>
     </table>
 </body>
 </html>

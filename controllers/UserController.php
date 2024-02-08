@@ -75,10 +75,17 @@
 
         public function usersPage()
         {
+            session_start();
+            
             if (!isset($_SESSION['user_id'])) {
                 header('Location: /sign-in');
                 exit();
             }
+
+            $userModel = new User();
+            $users = $userModel->getUsers();
+
+            require_once __DIR__ . '/../views/usersList.php';
         }
 
         public function registeruserPage()
