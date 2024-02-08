@@ -72,13 +72,3 @@ a {
     text-align: center; 
 }
 
-.content {
-    margin: 20px auto; /* Centraliza o conteúdo horizontalmente */
-    max-width: 400px; /* Define a largura máxima do conteúdo */
-    padding: 20px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    background-color: #fff;
-    text-align: center; /* Centraliza todo o conteúdo */
-}
-
