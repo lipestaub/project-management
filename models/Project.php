@@ -47,5 +47,35 @@
             $projectDAO = new ProjectDAO();
             $project = $projectDAO->createProject($project);
         }
+
+        public function getProjects() {
+            $projectDAO = new ProjectDAO();
+            $projects = $projectDAO->getProjects();
+
+            array_map(function($project) {
+                return new self(
+                    $project['id'],
+                    $project['name'],
+                    $project['description'],
+                    $project['star_date'],
+                    $project['end_date'],
+                );
+            }, $projects);
+
+            return $projects;
+        }
+
+        public function getProjectById(int $projectId) {
+            $projectDAO = new ProjectDAO();
+            $project = $projectDAO->getProjectById($projectId);
+            
+            return new self(
+                $project['id'],
+                $project['name'],
+                $project['description'],
+                $project['star_date'],
+                $project['end_date'],
+            );
+        }
     }
 ?>
