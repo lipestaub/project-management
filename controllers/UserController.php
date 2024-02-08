@@ -57,7 +57,7 @@
                 exit();
             }
 
-            $userId = (int) $_GET['user_id'];
+            $userId = (int) $_POST['user_id'];
 
             $userModel = new User();
             $user = $userModel->getUserById($userId);
@@ -67,12 +67,11 @@
 
             $taskModel = new Task();
 
-            array_map(function($task, $taskModel) {
+            $tasks = array_map(function($task) use ($taskModel) {
                 return $taskModel->getTaskById($task->getTaskId());
             }, $tasks);
 
-            var_dump($taskModel);
-            exit();
+            require_once __DIR__ . '/../views/user.php';
         }
 
         public function usersPage()
