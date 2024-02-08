@@ -35,7 +35,7 @@
             return $this->date;
         }
 
-        public function createAssignment(Assignment $assignment)
+        public function createAssignment(self $assignment)
         {
             $assignmentDAO = new AssignmentDAO();
             $assignment = $assignmentDAO->createAssignment($assignment);

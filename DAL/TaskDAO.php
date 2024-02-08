@@ -18,5 +18,13 @@
             $stmt->bindValue(":start_date", $task->getEndDate());
             $stmt->execute();
         }
+
+        public function getTaskById($taskId)
+        {
+            $query = 'SELECT * FROM task WHERE id = :id;';
+            $stmt = $this->db->prepare($query);
+            $stmt->bindValue(":id", $taskId);
+            $stmt->execute();
+        }
     }
 ?>

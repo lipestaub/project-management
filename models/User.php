@@ -40,10 +40,10 @@
             $userDAO->createUser($user);
         }
 
-        public function getUserById(int $id)
+        public function getUserById(int $userId)
         {
             $userDAO = new UserDAO();
-            $user = $userDAO->getUserById($id);
+            $user = $userDAO->getUserById($userId);
             
             return new self(
                 $user['id'],
@@ -78,5 +78,23 @@
                 $user['email'],
             );
         }
+
+        public function getUsers()
+        {
+            $userDAO = new UserDAO();
+            $users = $userDAO->getUsers();
+
+            array_map(function($user){
+                return new User(
+                    $user['id'],
+                    $user['username'],
+                    $user['password'],
+                    $user['email'],
+                );
+            }, $users);
+
+            return $users;
+        }
+
     }
 ?>
