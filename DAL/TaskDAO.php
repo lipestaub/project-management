@@ -38,5 +38,15 @@
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             return $stmt->fetchAll();
         }
+
+        public function getTasksByProjectId(int $projectId)
+        {
+            $query = 'SELECT * FROM task WHERE project_id = :project_id;';
+            $stmt = $this->db->prepare($query);
+            $stmt->bindParam(":project_id", $projectId);
+            $stmt->execute();
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            return $stmt->fetchAll();
+        }
     }
 ?>

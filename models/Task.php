@@ -78,5 +78,21 @@
                 );
             }, $tasks);
         }
+
+        public function getTasksByProjectId(int $projectId)
+        {
+            $taskDAO = new TaskDAO();
+            $tasks = $taskDAO->getTasksByProjectId($projectId);
+
+            return array_map(function($task){
+                return new self(
+                    $task['id'],
+                    $task['description'],
+                    $task['project_id'],
+                    $task['start_date'],
+                    $task['end_date'],
+                );
+            }, $tasks);
+        }
     }
 ?>
