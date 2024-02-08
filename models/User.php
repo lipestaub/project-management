@@ -69,7 +69,7 @@
         public function getUserByEmail(string $email)
         {
             $userDAO = new UserDAO();
-            $user = $userDAO->getUserByUsername($email);
+            $user = $userDAO->getUserByEmail($email);
 
             return new self(
                 $user['id'],
