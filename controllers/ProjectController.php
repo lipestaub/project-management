@@ -1,5 +1,6 @@
 <?php
     require_once __DIR__ . '/../models/Project.php';
+    require_once __DIR__ . '/../models/Task.php';
 
     class ProjectController
     {
@@ -12,9 +13,15 @@
                 exit();
             }
 
-            $projectId = $_GET['project_id'];
+            $projectId = $_POST['project_id'];
 
+            $projectModel = new Project();
+            $project = $projectModel->getProjectById($projectId);
 
+            $taskModel = new Task();
+            $tasks = $taskModel->getTasksByProjectId($projectId);
+
+            require_once __DIR__ . '/../views/project.php';
         }
 
         public function projectsPage()
