@@ -4,14 +4,16 @@
     class User
     {
         private ?int $id;
-        private ?string $username;
+        private ?string $name;
         private ?string $email;
+        private ?string $password;
 
-        public function __construct(?int $id = null, ?string $username = null, ?string $email = null)
+        public function __construct(?int $id = null, ?string $name = null, ?string $email = null, ?string $password = null)
         {
             $this->id       = $id;
-            $this->username = $username;
+            $this->name = $name;
             $this->email = $email;
+            $this->password = $password;
         }
 
         public function getId()
@@ -19,9 +21,9 @@
             return $this->id;
         }
 
-        public function getUsername()
+        public function getName()
         {
-            return $this->username;
+            return $this->name;
         }
 
         public function getPassword()
@@ -47,22 +49,22 @@
             
             return new self(
                 $user['id'],
-                $user['username'],
-                $user['password'],
+                $user['name'],
                 $user['email'],
+                $user['password'],
             );
         }
 
         public function getUserByEmailAndPassword(string $email, string $password)
         {
             $userDAO = new UserDAO();
-            $user = $userDAO->getUserByUsernameAndPassword($email, $password);
+            $user = $userDAO->getUserByEmailAndPassword($email, $password);
 
             return new self(
                 $user['id'],
-                $user['username'],
-                $user['password'],
+                $user['name'],
                 $user['email'],
+                $user['password'],
             );
         }
 
@@ -73,9 +75,9 @@
 
             return new self(
                 $user['id'],
-                $user['username'],
-                $user['password'],
+                $user['name'],
                 $user['email'],
+                $user['password'],
             );
         }
 
@@ -87,9 +89,9 @@
             array_map(function($user){
                 return new self(
                     $user['id'],
-                    $user['username'],
-                    $user['password'],
+                    $user['name'],
                     $user['email'],
+                    $user['password'],
                 );
             }, $users);
 
