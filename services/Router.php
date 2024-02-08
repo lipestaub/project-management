@@ -11,13 +11,10 @@
                     '/sign-in' => 'UserController@signInPage',
                     '/sign-up' => 'UserController@signUpPage',
                     '/sign-out' => 'UserController@signOut',
-                    '/project' => 'ProjectController@projectPage',
                     '/projects' => 'ProjectController@projectsPage',
                     '/register-project' => 'ProjectController@registerProjectPage',
-                    '/task' => 'TaskController@taskPage',
                     '/tasks' => 'TaskController@tasksPage',
                     '/register-task' => 'TaskController@registerTaskPage',
-                    '/user' => 'UserController@userPage',
                     '/users' => 'UserController@usersPage',
                     '/register-user' => 'UserController@registerUserPage',
                     '/user-tasks' => 'UserController@userTasksPage'
@@ -28,7 +25,10 @@
                     '/register-project' => 'ProjectController@createProject',
                     '/register-task' => 'TaskController@createTask',
                     '/register-user' => 'UserController@registerUser',
-                    '/assign-user-to-task' => 'AssignmentController@createAssignment'
+                    '/assign-user-to-task' => 'AssignmentController@createAssignment',
+                    '/user' => 'UserController@userPage',
+                    '/task' => 'TaskController@taskPage',
+                    '/project' => 'ProjectController@projectPage'
                 ]
             ];
         }

@@ -12,11 +12,10 @@
 
         public function createAssignment(Assignment $assignment)
         {
-            $query = 'INSERT INTO assignment (user_id, task_id, date) VALUES (:user_id, :task_id, :date);';
+            $query = 'INSERT INTO assignment (user_id, task_id) VALUES (:user_id, :task_id);';
             $stmt = $this->db->prepare($query);
-            $stmt->bindValue('user_id', $assignment->getId());
-            $stmt->bindValue('task_id', $assignment->getTaskId());
-            $stmt->bindValue('date', $assignment->getDate());
+            $stmt->bindValue(':user_id', $assignment->getUserId());
+            $stmt->bindValue(':task_id', $assignment->getTaskId());
             $stmt->execute();
         }
 
@@ -38,6 +37,17 @@
             $stmt->execute();
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             return $stmt->fetchAll();
+        }
+
+        public function getAssignmentByTaskIdAndUserId(int $taskId, int $userId)
+        {
+            $query = 'SELECT * FROM assignment WHERE task_id = :task_id AND user_id = :user_id;';
+            $stmt = $this->db->prepare($query);
+            $stmt->bindParam(":task_id", $taskId);
+            $stmt->bindParam(":user_id", $userId);
+            $stmt->execute();
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            return $stmt->fetchAll()[0];
         }
     }
 ?>

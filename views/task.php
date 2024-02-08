@@ -11,10 +11,12 @@
 <body>
     <?php include_once __DIR__ . '/../public/html/menu.html'; ?>
     
-    <h1>Task Description</h1>
-    <p>Start Date: 05/02/2024</p>
+    <h1>Task</h1>
+    <p>Description: <?php echo $task->getDescription(); ?></p>
     <br>
-    <p>End Date: 05/02/2024</p>
+    <p>Start Date: <?php echo $task->getStartDate(); ?></p>
+    <br>
+    <p>End Date: <?php echo $task->getEndDate(); ?></p>
     <br>
     <h2>Task's User List</h1>
     <table>
@@ -23,15 +25,22 @@
             <th>E-mail</th>
             <th></th>
         </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td>
-                <form action="/user" method="get">
-                    <input type="hidden" name="user_id" id="user_id" value="echo">
-                </form>
-            </td>
-        </tr>
+        <?php
+            foreach ($taskUsers as $user) {
+        ?>
+                <tr>
+                    <td><?php echo $user->getName(); ?></td>
+                    <td><?php echo $user->getEmail(); ?></td>
+                    <td>
+                        <form action="/user" method="post">
+                            <input type="hidden" name="user_id" id="user_id" value="<?php echo $user->getId(); ?>">
+                            <input type="submit" value="Open">
+                        </form>
+                    </td>
+                </tr>
+        <?php
+            }
+        ?>
     </table>
     <hr>
     <h2>Assign User to Task</h1>
@@ -40,8 +49,15 @@
         <br>
         <select name="user_id" id="user_id">
             <option value="0">Select</option>
-            <option value="echo">echo</option>
+            <?php
+                foreach ($users as $user) {
+            ?>
+                    <option value="<?php echo $user->getId(); ?>"><?php echo $user->getName(); ?></option>
+            <?php
+                }
+            ?>
         </select>
+        <input type="hidden" name="task_id" id="task_id" value="<?php echo $task->getId(); ?>">
         <br>
         <br>
         <input type="submit" value="Assign">

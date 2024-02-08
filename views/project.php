@@ -31,7 +31,7 @@
             <td></td>
             <td></td>
             <td>
-                <form action="/task" method="get">
+                <form action="/task" method="post">
                     <input type="hidden" name="task_id" id="task_id" value="echo">
                     <input type="submit" value="Open">
                 </form>

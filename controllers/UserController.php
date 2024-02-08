@@ -57,7 +57,7 @@
                 exit();
             }
 
-            $userId = $_GET['user_id'];
+            $userId = (int) $_GET['user_id'];
 
             $userModel = new User();
             $user = $userModel->getUserById($userId);
