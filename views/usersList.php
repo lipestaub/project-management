@@ -23,7 +23,7 @@
                 <td><?php echo $user->getEmail(); ?></td>
                 <td>
                     <form action="/user" method="get">
-                        <input type="hidden" name="user_id" id="user_id" value="echo">
+                        <input type="hidden" name="user_id" id="user_id" value="<?php echo $user->getId(); ?>">
                         <input type="submit" value="Open">
                     </form>
                 </td>
