@@ -18,12 +18,16 @@
         public function tasksPage()
         {
             session_start();
-
+            
             if (!isset($_SESSION['user_id'])) {
                 header('Location: /sign-in');
                 exit();
             }
 
+            $taskModel = new Task();
+            $tasks = $taskModel->getTasks();
+
+            require_once __DIR__ . '/../tasksList.php';
         }
 
         public function registerTaskPage()
