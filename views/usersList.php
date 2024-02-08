@@ -6,7 +6,7 @@
     <title>Users List</title>
 </head>
 <body>
-    <?php include_once '../public/html/menu.html'; ?>
+    <?php include_once __DIR__ . '/../public/html/menu.html'; ?>
     
     <h1>Users List</h1>
     <table>
@@ -21,6 +21,7 @@
             <td>
                 <form action="/user" method="get">
                     <input type="hidden" name="user_id" id="user_id" value="echo">
+                    <input type="submit" value="Open">
                 </form>
             </td>
         </tr>

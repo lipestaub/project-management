@@ -10,15 +10,17 @@
 <body>
     <h1>Sign Up</h1>
     <form action="/sign-up" method="post" onsubmit="validateSignUpFields(event);">
-        <label for="username">Username</label>
+        <label for="name">Name</label>
         <br>
-        <input type="text" name="username" id="username">
+        <input type="text" name="name" id="name">
         <br>
+        <label for="email">E-mail</label>
+        <br>
+        <input type="text" name="email" id="email">
         <br>
         <label for="password">Password</label>
         <br>
         <input type="password" name="password" id="password">
-        <br>
         <br>
         <label for="confirm_password">Confirm Password</label>
         <br>

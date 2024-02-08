@@ -19,14 +19,15 @@
                     '/register-task' => 'TaskController@registerTaskPage',
                     '/user' => 'UserController@userPage',
                     '/users-list' => 'UserController@usersPage',
-                    '/register-user' => 'UserController@registerUserPage'
+                    '/register-user' => 'UserController@registerUserPage',
+                    '/user-tasks' => 'UserController@userTasksPage'
                 ],
                 'POST' => [
                     '/sign-in' => 'UserController@validateEmailAndPassword',
                     '/sign-up' => 'UserController@createUser',
                     '/register-project' => 'ProjectController@createProject',
                     '/register-task' => 'TaskController@createTask',
-                    '/register-user' => 'UserController@createUser',
+                    '/register-user' => 'UserController@registerUser',
                     '/assign-user-to-task' => 'AssignmentController@createAssignment'
                 ]
             ];

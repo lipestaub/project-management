@@ -1,4 +1,5 @@
-<?php 
+<?php
+    require_once __DIR__ . "/../DAL/AssignmentDAO.php";
 
     class Assignment
     {
@@ -7,7 +8,7 @@
         private ?int $taskId;
         private ?DateTime $date;
 
-        public function __construct(?int $id = null, ?int $userId = null, ?int $taskId = null, ?DateTime $date)
+        public function __construct(?int $id = null, ?int $userId = null, ?int $taskId = null, ?DateTime $date = null)
         {
             $this->id     = $id;
             $this->userId = $userId;
@@ -46,16 +47,14 @@
             $assignmentDAO = new AssignmentDAO();
             $assignments = $assignmentDAO->getAssignmentsByUserId($userId);
 
-            array_map(function($assignment){
+            return array_map(function($assignment){
                 return new self(
                     $assignment['id'],
                     $assignment['user_id'],
                     $assignment['task_id'],
-                    $assignment['date'],
+                    new DateTime($assignment['date']),
                 );
             }, $assignments);
-
-            return $assignments;
         }
 
         public function getAssignmentByTasktId(int $taskId)
@@ -63,7 +62,7 @@
             $assignmentDAO = new AssignmentDAO();
             $assignments = $assignmentDAO->getAssignmentsByTaskId($taskId);
 
-            array_map(function($assignment){
+            return array_map(function($assignment){
                 return new self(
                     $assignment['id'],
                     $assignment['user_id'],
@@ -71,8 +70,6 @@
                     $assignment['date'],
                 );
             }, $assignments);
-
-            return $assignments;
         }
 
 

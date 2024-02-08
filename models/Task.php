@@ -1,14 +1,15 @@
 <?php
+    require_once __DIR__ . "/../DAL/TaskDAO.php";
 
     class Task
     {
         private ?int $id;
         private ?string $description;
         private ?int $projectId;
-        private ?DateTime $startDate;
-        private ?DateTime $endDate;
+        private ?string $startDate;
+        private ?string $endDate;
 
-        public function __construct(?int $id = null, ?string $description = null, ?int $projectId = null, ?DateTime $startDate = null, ?DateTime $endDate = null)
+        public function __construct(?int $id = null, ?string $description = null, ?int $projectId = null, ?string $startDate = null, ?string $endDate = null)
         {
             $this->id          = $id;
             $this->description = $description;
@@ -67,7 +68,7 @@
             $taskDAO = new TaskDAO();
             $tasks = $taskDAO->getTasks();
 
-            array_map(function($task){
+            return array_map(function($task){
                 return new self(
                     $task['id'],
                     $task['description'],
@@ -76,8 +77,6 @@
                     $task['end_date'],
                 );
             }, $tasks);
-
-            return $tasks;
         }
     }
 ?>

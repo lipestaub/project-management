@@ -23,8 +23,10 @@
         {
             $query = 'SELECT * FROM task WHERE id = :id;';
             $stmt = $this->db->prepare($query);
-            $stmt->bindValue(":id", $taskId);
+            $stmt->bindParam(":id", $taskId);
             $stmt->execute();
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            return $stmt->fetchAll()[0];
         }
 
         public function getTasks()

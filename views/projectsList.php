@@ -6,7 +6,7 @@
     <title>Projects List</title>
 </head>
 <body>
-    <?php include_once '../public/html/menu.html'; ?>
+    <?php include_once __DIR__ . '/../public/html/menu.html'; ?>
 
     <h1>Projects List</h1>
     <table>

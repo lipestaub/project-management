@@ -8,7 +8,7 @@
     <script type="application/javascript" src="../public/javascript/script.js"></script>
 </head>
 <body>
-    <?php include_once '../public/html/menu.html'; ?>
+    <?php include_once __DIR__ . '/../public/html/menu.html'; ?>
     
     <h1>Register Project</h1>
     <form action="/register-project" method="post" onsubmit="validateRegisterProjectFields(event);">

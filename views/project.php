@@ -6,7 +6,7 @@
     <title>Project</title>
 </head>
 <body>
-    <?php include_once '../public/html/menu.html'; ?>
+    <?php include_once __DIR__ . '/../public/html/menu.html'; ?>
     
     <h1>Project Name</h1>
     <p>Description: Description</p>
@@ -32,6 +32,7 @@
             <td>
                 <form action="/task" method="get">
                     <input type="hidden" name="task_id" id="task_id" value="echo">
+                    <input type="submit" value="Open">
                 </form>
             </td>
         </tr>

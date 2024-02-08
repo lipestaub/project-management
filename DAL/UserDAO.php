@@ -12,9 +12,9 @@
 
         public function createUser(User $user)
         {
-            $query = 'INSERT INTO "user" (username, password, email) VALUES (:username, :password, :email);';
+            $query = 'INSERT INTO "user" (name, password, email) VALUES (:name, :password, :email);';
             $stmt = $this->db->prepare($query);
-            $stmt->bindValue(":username", $user->getUsername());
+            $stmt->bindValue(":name", $user->getName());
             $stmt->bindValue(":password", $user->getPassword());
             $stmt->bindValue(":email", $user->getEmail());
             $stmt->execute();

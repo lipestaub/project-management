@@ -1,14 +1,15 @@
 <?php
+    require_once __DIR__ . "/../DAL/ProjectDAO.php";
 
     class Project
     {
         private ?int $id;
         private ?string $name;
         private ?string $description;
-        private ?DateTime $startDate;
-        private ?DateTime $endDate;
+        private ?string $startDate;
+        private ?string $endDate;
 
-        public function __construct(?int $id = null, ?string $name = null, ?string $description = null, ?DateTime $startDate = null, ?DateTime $endDate = null)
+        public function __construct(?int $id = null, ?string $name = null, ?string $description = null, ?string $startDate = null, ?string $endDate = null)
         {
                 $this->id          = $id;
                 $this->name        = $name;
@@ -52,7 +53,7 @@
             $projectDAO = new ProjectDAO();
             $projects = $projectDAO->getProjects();
 
-            array_map(function($project) {
+            return array_map(function($project) {
                 return new self(
                     $project['id'],
                     $project['name'],
@@ -61,8 +62,6 @@
                     $project['end_date'],
                 );
             }, $projects);
-
-            return $projects;
         }
 
         public function getProjectById(int $projectId) {
