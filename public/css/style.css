@@ -54,13 +54,14 @@ input[type="password"] {
 
 input[type="submit"] {
     border-radius: 5px;
-    width: 100%;
-    padding: 10px;
+    width: 100%; 
+    padding: 10px; 
     border: none; 
-    background-color: #007bff;
-    color: #fff;
-    cursor: pointer;
+    background-color: #007bff; 
+    color: #fff; 
+    cursor: pointer; 
 }
+
 a {
     color: #007bff; 
     text-decoration: none; 
