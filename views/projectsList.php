@@ -27,7 +27,7 @@
                     <td><?php echo $project->getStartDate(); ?></td>
                     <td><?php echo $project->getEndDate(); ?></td>
                     <td>
-                        <form action="/project" method="post">
+                        <form action="/project" method="post" id="table-form">
                             <input type="hidden" name="project_id" id="project_id" value=<?php echo $project->getId(); ?>>
                             <input type="submit" value="Open">
                         </form>

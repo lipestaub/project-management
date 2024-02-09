@@ -26,7 +26,7 @@
                     <td><?php echo $task->getStartDate(); ?></td>
                     <td><?php echo $task->getEndDate(); ?></td>
                     <td>
-                        <form action="/task" method="post">
+                        <form action="/task" method="post" id="table-form">
                             <input type="hidden" name="task_id" id="task_id" value="<?php echo $task->getId(); ?>">
                             <input type="submit" value="Open">
                         </form>

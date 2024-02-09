@@ -24,7 +24,7 @@
                 <td><?php echo $user->getName(); ?></td>
                 <td><?php echo $user->getEmail(); ?></td>
                 <td>
-                    <form action="/user" method="post">
+                    <form action="/user" method="post" id="table-form">
                         <input type="hidden" name="user_id" id="user_id" value="<?php echo $user->getId(); ?>">
                         <input type="submit" value="Open">
                     </form>

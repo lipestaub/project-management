@@ -13,11 +13,8 @@
     
     <h1>Task</h1>
     <p>Description: <?php echo $task->getDescription(); ?></p>
-    <br>
     <p>Start Date: <?php echo $task->getStartDate(); ?></p>
-    <br>
     <p>End Date: <?php echo $task->getEndDate(); ?></p>
-    <br>
     <h2>Task's User List</h1>
     <table>
         <tr>
@@ -32,7 +29,7 @@
                     <td><?php echo $user->getName(); ?></td>
                     <td><?php echo $user->getEmail(); ?></td>
                     <td>
-                        <form action="/user" method="post">
+                        <form action="/user" method="post" id="table-form">
                             <input type="hidden" name="user_id" id="user_id" value="<?php echo $user->getId(); ?>">
                             <input type="submit" value="Open">
                         </form>
@@ -42,7 +39,7 @@
             }
         ?>
     </table>
-    <hr>
+    <br>
     <h2>Assign User to Task</h1>
     <form action="/assign-user-to-task" method="post" onsubmit="validateAssignUserToTaskFields(event);">
         <label for="user_id">User</label>

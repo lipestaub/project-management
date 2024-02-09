@@ -11,11 +11,8 @@
     
     <h1><?php echo $project->getName(); ?></h1>
     <p>Description:<?php echo $project->getDescription(); ?></p>
-    <br>
     <p>Start Date:<?php echo $project->getStartDate(); ?></p>
-    <br>
     <p>End Date:<?php echo $project->getEndDate(); ?></p>
-    <br>
     <h2>Projects's Task List</h1>
     <table>
         <tr>
@@ -32,7 +29,7 @@
             <td><?php echo $task->getStartDate(); ?></td>
             <td><?php echo $task->getEndDate(); ?></td>
             <td>
-                <form action="/task" method="post">
+                <form action="/task" method="post" id="table-form">
                     <input type="hidden" name="task_id" id="task_id" value="<?php echo $task->getId(); ?>">
                     <input type="submit" value="Open">
                 </form>
