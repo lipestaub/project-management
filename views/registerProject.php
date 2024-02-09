@@ -19,7 +19,7 @@
         <br>
         <label for="description">Description</label>
         <br>
-        <textarea name="description" id="" cols="30" rows="10" maxlength="255"></textarea>
+        <textarea name="description" id="description" cols="30" rows="10" maxlength="255"></textarea>
         <br>
         <br>
         <label for="start_date">Start Date</label>

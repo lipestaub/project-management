@@ -14,7 +14,7 @@
     <form action="/register-task" method="post" onsubmit="validateRegisterTaskFields(event);">
         <label for="description">Description</label>
         <br>
-        <textarea name="description" id="" cols="30" rows="10" maxlength="255"></textarea>
+        <textarea name="description" id="description" cols="30" rows="10" maxlength="255"></textarea>
         <br>
         <br>
         <label for="project_id">Project</label>
