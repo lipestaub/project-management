@@ -49,5 +49,15 @@
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             return $stmt->fetchAll()[0];
         }
+
+        public function getAssignmentById(int $assignmentId)
+        {
+            $query = 'SELECT * FROM assignment WHERE id = :id';
+            $stmt = $this->db->prepare($query);
+            $stmt->bindParam(":id", $assignmentId);
+            $stmt->execute();
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            return $stmt->fetchAll()[0];
+        }
     }
 ?>

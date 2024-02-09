@@ -57,7 +57,7 @@
             }, $assignments);
         }
 
-        public function getAssignmentByTaskId(int $taskId)
+        public function getAssignmentsByTaskId(int $taskId)
         {
             $assignmentDAO = new AssignmentDAO();
             $assignments = $assignmentDAO->getAssignmentsByTaskId($taskId);
@@ -76,6 +76,19 @@
         {
             $assignmentDAO = new AssignmentDAO();
             $assignment = $assignmentDAO->getAssignmentByTaskIdAndUserId($taskId, $userId);
+
+            return new self(
+                $assignment['id'],
+                $assignment['user_id'],
+                $assignment['task_id'],
+                new DateTime($assignment['date']),
+            );
+        }
+
+        public function getAssignmentById(int $assignmentId)
+        {
+            $assignmentDAO = new AssignmentDAO();
+            $assignment = $assignmentDAO->getAssignmentById($assignmentId);
 
             return new self(
                 $assignment['id'],

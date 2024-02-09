@@ -43,6 +43,12 @@ function validateRegisterProjectFields(event) {
         event.preventDefault();
         return false;
     }
+
+    if (new Date(endDate) <= new Date(startDate)) {
+        alert('End date must be greater than start date.');
+        event.preventDefault();
+        return false;
+    }
     
     return true;
 }
@@ -55,6 +61,12 @@ function validateRegisterTaskFields(event) {
 
     if (description.trim() === '' || projectId === 0 || startDate.trim() === '' || endDate.trim() === '') {
         alert('Please fill in all fields.');
+        event.preventDefault();
+        return false;
+    }
+
+    if (new Date(endDate) <= new Date(startDate)) {
+        alert('End date must be greater than start date.');
         event.preventDefault();
         return false;
     }

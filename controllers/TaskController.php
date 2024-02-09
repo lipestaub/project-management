@@ -22,7 +22,7 @@
 
             $assignmentModel = new Assignment();
 
-            $assignments = $assignmentModel->getAssignmentByTaskId($taskId);
+            $assignments = $assignmentModel->getAssignmentsByTaskId($taskId);
 
             $userModel = new User();
 
