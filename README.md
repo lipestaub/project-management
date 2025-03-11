@@ -1,49 +1,22 @@
-VIEWS
---------------------------------------------------------------------------------------------------------------------------------------------------------------
-tela de login -> nome de usuário (input text) e senha (input password)
+# PHP Project Manager
 
-tela de cadastro -> nome (input text), email (input email), senha (input password) e confirmar senha (input password)
+This repository contains a PHP-based project management application.
 
-tela de cadastros -> nome (input text), email (input email), senha (input password) e confirmar senha (input password)
+## Description
 
-tela de cadastro de projetos-> nome (input text), descricao (input text), data de início (input date) e data final (input date)
+This application provides basic project management functionality, allowing users to create, manage, and track projects.
 
-tela de cadastro de tarefas -> descricao (input text), projeto (select), data de início (input date) e data final (input date)
+## Features
 
-tela de visualização de tarefa -> descricao (p), projeto (p), data de início (p), data final (p), atribuições (ul), usuários (select) e botão atribuir (button)
+* Create new projects.
+* View existing projects.
+* Assign tasks to projects.
+* Assign users to tasks.
+* User authentication and authorization.
 
-tela lista de projetos
+## Usage
 
-tela de visualização do projeto -> nome (p), descrição (p) data de início (p), data final (p) e lista de tarefas (ul)
-
-tela lista usuários
-
-tela visualização do usuário -> nome (p), email (p) e tarefas atribuídas (ul)
-
-BANCO DE DADOS
---------------------------------------------------------------------------------------------------------------------------------------------------------------
-*user*
-id
-name
-email
-password
-
-*project*
-id
-name
-description
-start_date
-end_date
-
-*task*
-id
-description
-project_id
-start_date
-end_date
-
-*assignment*
-id
-user_id
-task_id
-date
+1.  Clone the repository to your web server's document root.
+2.  Ensure you have a PHP environment set up.
+3.  (If applicable) Configure any database connections in the code.
+4.  Open the application in your web browser.
